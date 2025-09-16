@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brigade des Filles du Congo - Protection des droits des enfants et des femmes</title>
+    <style>
+        :root {
+            --primary-green: #2e7d32;  /* Vert foncé */
+            --secondary-green: #4caf50;  /* Vert moyen */
+            --accent-green: #8bc34a;  /* Vert clair */
+            --dark-green: #1b5e20;  /* Vert très foncé */
+            --light-green: #e8f5e9;  /* Vert très clair */
+            --gold: #fecf34;  /* Or pour accents */
+            --dark-text: #212121;
+            --light-text: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-text);
+            background-color: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-green);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+            padding: 8px 0;
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--light-text);
+            margin-left: 10px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--accent-green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--light-text);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .language-selector button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            padding: 8px 12px;
+            margin: 0 5px;
+            border-radius: 20px;
+            color: var(--light-text);
+            transition: all 0.3s;
+        }
+
+        .language-selector button.active {
+            background: var(--gold);
+            color: var(--dark-green);
+            font-weight: bold;
+        }
+
+        .language-selector button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232e7d32"/><path d="M0 0L100 100" stroke="%234caf50" stroke-width="2"/><path d="M100 0L0 100" stroke="%234caf50" stroke-width="2"/></svg>');
+            background-size: cover;
+            color: var(--light-text);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="2" cy="2" r="1" fill="%238bc34a" opacity="0.3"/></svg>');
+            animation: sparkle 20s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--dark-green);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-color: #ffc107;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-green);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--dark-green);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-green), var(--accent-green));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Missions Section */
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mission-card {
+            background-color: var(--light-text);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--accent-green);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+
+        /* Intervention Areas */
+        .areas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .area-card {
+            background: var(--light-text);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary-green);
+            transition: transform 0.3s;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .partner-logo {
+            background-color: var(--light-text);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-green);
+            transition: transform 0.3s;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231b5e20" opacity="0.1"/></svg>');
+            transition: opacity 0.3s;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--dark-green);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent-green);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--light-text);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-green);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+
+            .language-selector {
+                margin: 15px 0 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                Rejoignez-nous dans notre mission pour un avenir meilleur !
+            </div>
+        </div>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-img">BFC</div>
+                <h1>Brigade des Filles du Congo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#missions">Nos missions</a></li>
+                    <li><a href="#intervention">Domaines d'intervention</a></li>
+                    <li><a href="#partners">Partenaires</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button id="lang-fr" class="active">FR</button>
+                <button id="lang-en">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Construisons un avenir meilleur pour les enfants et les femmes</h2>
+            <p>ONG de développement dédiée à la protection et à la promotion des droits des enfants et des femmes</p>
+            <a href="#contact" class="btn">Nous contacter</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">À propos de BFC</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>La Brigade des Filles du Congo (BFC) est une organisation non gouvernementale créée en 2005 par le couple Évêque Jean Baptiste WAMBA et Marie Thérèse MANGOLE. Inspirée par une expérience missionnaire en Zambie, BFC s'engage à protéger et à promouvoir les droits des enfants et des femmes, en particulier dans la province du Haut Katanga en République Démocratique du Congo.</p>
+                    <p>Avec plus de 20 ans d'expérience, BFC a contribué à l'alphabétisation de plus de 1500 jeunes filles mères vulnérables, à la scolarisation de plus de 3 000 enfants, et à l'autonomisation de plus de 200 parents vulnérables.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Ans d'expérience</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">1500+</div>
+                            <div class="stat-label">Filles alphabétisées</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">3000+</div>
+                            <div class="stat-label">Enfants scolarisés</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Parents autonomisés</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions Section -->
+    <section id="missions">
+        <div class="container">
+            <h2 class="section-title">Nos missions</h2>
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">📚</div>
+                    <h3>Éducation</h3>
+                    <p>Assurer et promouvoir l'éducation formelle et non formelle dans un cadre assaini pour les enfants vulnérables de 09-17 ans.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">🛡️</div>
+                    <h3>Protection</h3>
+                    <p>Prévenir et lutter contre les mariages des enfants et les unions précoces en RDC.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">💼</div>
+                    <h3>Autonomisation</h3>
+                    <p>Participer à l'autonomisation des enfants et des jeunes filles mères vulnérables.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">🏥</div>
+                    <h3>Santé</h3>
+                    <p>Assurer les soins de santé de proximité en faveur des populations locales défavorisées.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intervention Areas Section -->
+    <section id="intervention">
+        <div class="container">
+            <h2 class="section-title">Domaines d'intervention</h2>
+            <div class="areas-container">
+                <div class="area-card">
+                    <h3>Protection des droits</h3>
+                    <p>Protection et promotion des droits des enfants et de la femme.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Éducation</h3>
+                    <p>Éducation formelle et non formelle.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Entrepreneuriat</h3>
+                    <p>Entrepreneuriat et renforcement économique.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Sécurité alimentaire</h3>
+                    <p>Lutte contre l'insécurité alimentaire.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Santé</h3>
+                    <p>Santé et programmes WASH (eau, assainissement, hygiène).</p>
+                </div>
+                <div class="area-card">
+                    <h3>Urgences</h3>
+                    <p>Intervention en situations d'urgence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners">
+        <div class="container">
+            <h2 class="section-title">Nos partenaires</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">GIRLS FIRST FUND/RDC</div>
+                <div class="partner-logo">IBCR/RDC</div>
+                <div class="partner-logo">USAD/ACCELERE1</div>
+                <div class="partner-logo">VISION MONDIALE</div>
+                <div class="partner-logo">DIVAS/HAUT KATANGA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galerie</h2>
+            <div class="gallery-grid">
+                <div class="" >
+
+                
+                
+                
+                <img src="WhatsApp Image 2025-09-12 at 18.14.30.jpeg" style="width: 900px; height: auto;">
+                
+                
+                <img src="WhatsApp Image 2025-09-12 at 18.14.29 copy.jpeg" style="width: 900px; height: auto;">
+            
+               <img src="WhatsApp Image 2025-09-12 at 18.14.27.jpeg" style="width: 900px; height: auto;">
+                
+                
+                <img src="WhatsApp Image 2025-09-12 at 18.14.29.jpeg" style="width: 800px; height: auto;">
+
+                <img src="WhatsApp Image 2025-09-12 at 18.14.26 copy 2.jpeg" style="width: 900px; height: auto;">
+                <img src="WhatsApp Image 2025-09-12 at 18.14.31 copy.jpeg" style="width: 900px; height: auto;">
+                
+                <img src="WhatsApp Image 2025-09-12 at 18.14.26.jpeg" style="width: 900px; height: auto;">
+
+                <img src="WhatsApp Image 2025-09-12 at 18.14.25.jpeg" style="width: 900px; height: auto;">
+
+                
+
+                <img src="WhatsApp Image 2025-09-12 at 18.14.32.jpeg" style="width: 900px; height: auto;">
+
+               <img src="WhatsApp Image 2025-09-12 at 18.14.26 copy.jpeg" style="width: 900px; height: auto;">
+               
+                  <img src=" Image 2025-09 12 18.14.33.jpeg" style="width: 900px; height: auto;">
+
+        
+
+
+                <img src="WhatsApp Image 2025-09-12 at 18.14.26 copy 3.jpeg" style="width: 900px; height: auto;">
+           
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <p><span class="contact-icon">📍</span> Lubumbashi – RDC</p>
+                        <p><span class="contact-icon">📞</span> +243 997 637 344</p>
+                        <p><span class="contact-icon">✉️</span> jeanwamba4@gmail.com</p>
+                    </div>
+                    
+                </div>
+              <div class="contact-form">
+            <!-- Formulaire configuré pour envoyer les messages à jeanwamba4@gmail.com -->
+            <form action="https://formsubmit.co/jeanwamba4@gmail.com" method="POST">
+                <!-- Ces champs cachés sont importants pour la configuration -->
+                <input type="hidden" name="_subject" value="Nouveau message depuis le site web">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="https://formsubmit.co/jeanwamba4@gmail.com" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Envoyer le message</button>
+            </form>
+        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Brigade des Filles du Congo</h3>
+                    <p>ONG de développement dédiée à la protection et à la promotion des droits des enfants et des femmes en RDC.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#missions">Nos missions</a></li>
+                        <li><a href="#intervention">Domaines d'intervention</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Lubumbashi, RDC</li>
+                        <li>+243 817 353 032</li>
+                        <li>+243 997 637 344</li>
+                        <li>jeanwamba4@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suivez-nous</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=61557743335687">Facebook</a></li>
+                      
+                        <li><a href="https://www.instagram.com/brigadedesfillesducongo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Brigade des Filles du Congo. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Language Switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langFr = document.getElementById('lang-fr');
+            const langEn = document.getElementById('lang-en');
+            
+            // Text content in both languages
+            const content = {
+                fr: {
+                    headerTop: "Rejoignez-nous dans notre mission pour un avenir meilleur !",
+                    logoTitle: "Brigade des Filles du Congo",
+                    navAbout: "À propos",
+                    navMissions: "Nos missions",
+                    navIntervention: "Domaines d'intervention",
+                    navPartners: "Partenaires",
+                    navGallery: "Galerie",
+                    navContact: "Contact",
+                    heroTitle: "Construisons un avenir meilleur pour les enfants et les femmes",
+                    heroText: "ONG de développement dédiée à la protection et à la promotion des droits des enfants et des femmes",
+                    heroBtn: "Nous contacter",
+                    aboutTitle: "À propos de BFC",
+                    aboutText1: "La Brigade des Filles du Congo (BFC) est une organisation non gouvernementale créée en 2005 par le couple Évêque Jean Baptiste WANBA et Marie Thérèse MANGOLE. Inspirée par une expérience missionnaire en Zambie, BFC s'engage à protéger et à promouvoir les droits des enfants et des femmes, en particulier dans la province du Haut Katanga en République Démocratique du Congo.",
+                    aboutText2: "Avec plus de 20 ans d'expérience, BFC a contribué à l'alphabétisation de plus de 1500 jeunes filles mères vulnérables, à la scolarisation de plus de 3 000 enfants, et à l'autonomisation de plus de 200 parents vulnérables.",
+                    stat1: "Ans d'expérience",
+                    stat2: "Filles alphabétisées",
+                    stat3: "Enfants scolarisés",
+                    stat4: "Parents autonomisés",
+                    missionsTitle: "Nos missions",
+                    mission1Title: "Éducation",
+                    mission1Text: "Assurer et promouvoir l'éducation formelle et non formelle dans un cadre assaini pour les enfants vulnérables de 09-17 ans.",
+                    mission2Title: "Protection",
+                    mission2Text: "Prévenir et lutter contre les mariages des enfants et les unions précoces en RDC.",
+                    mission3Title: "Autonomisation",
+                    mission3Text: "Participer à l'autonomisation des enfants et des jeunes filles mères vulnérables.",
+                    mission4Title: "Santé",
+                    mission4Text: "Assurer les soins de santé de proximité en faveur des populations locales défavorisées.",
+                    interventionTitle: "Domaines d'intervention",
+                    intervention1: "Protection des droits",
+                    intervention1Text: "Protection et promotion des droits des enfants et de la femme.",
+                    intervention2: "Éducation",
+                    intervention2Text: "Éducation formelle et non formelle.",
+                    intervention3: "Entrepreneuriat",
+                    intervention3Text: "Entrepreneuriat et renforcement économique.",
+                    intervention4: "Sécurité alimentaire",
+                    intervention4Text: "Lutte contre l'insécurité alimentaire.",
+                    intervention5: "Santé",
+                    intervention5Text: "Santé et programmes WASH (eau, assainissement, hygiène).",
+                    intervention6: "Urgences",
+                    intervention6Text: "Intervention en situations d'urgence.",
+                    partnersTitle: "Nos partenaires",
+                    galleryTitle: "Galerie",
+                    contactTitle: "Contactez-nous",
+                    contactAddress: "Lubumbashi – RDC",
+                    contactPhone: " +243 997 637 344",
+                    contactEmail: "jeanwamba4@gmail.com",
+                    contactName: "Nom complet",
+                    contactEmailField: "Adresse email",
+                    contactSubject: "Sujet",
+                    contactMessage: "Message",
+                    contactBtn: "Envoyer le message",
+                    footerAbout: "ONG de développement dédiée à la protection et à la promotion des droits des enfants et des femmes en RDC.",
+                    footerQuickLinks: "Liens rapides",
+                    footerFollow: "Suivez-nous",
+                    copyright: "© 2023 Brigade des Filles du Congo. Tous droits réservés."
+                },
+                en: {
+                    headerTop: "Join us in our mission for a better future!",
+                    logoTitle: "Brigade des Filles du Congo",
+                    navAbout: "About",
+                    navMissions: "Our missions",
+                    navIntervention: "Intervention areas",
+                    navPartners: "Partners",
+                    navGallery: "Gallery",
+                    navContact: "Contact",
+                    heroTitle: "Building a better future for children and women",
+                    heroText: "Development NGO dedicated to the protection and promotion of children's and women's rights",
+                    heroBtn: "Contact us",
+                    aboutTitle: "About BFC",
+                    aboutText1: "Brigade des Filles du Congo (BFC) is a non-governmental organization created in 2005 by Bishop Jean Baptiste WANBA and Marie Thérèse MANGOLE. Inspired by a missionary experience in Zambia, BFC is committed to protecting and promoting the rights of children and women, particularly in the Haut Katanga province of the Democratic Republic of Congo.",
+                    aboutText2: "With over 20 years of experience, BFC has contributed to the literacy of more than 1500 vulnerable young mothers, the schooling of more than 3,000 children, and the empowerment of more than 200 vulnerable parents.",
+                    stat1: "Years of experience",
+                    stat2: "Girls made literate",
+                    stat3: "Children educated",
+                    stat4: "Parents empowered",
+                    missionsTitle: "Our missions",
+                    mission1Title: "Education",
+                    mission1Text: "Ensure and promote formal and non-formal education in a healthy environment for vulnerable children aged 09-17.",
+                    mission2Title: "Protection",
+                    mission2Text: "Prevent and combat child marriages and early unions in DRC.",
+                    mission3Title: "Empowerment",
+                    mission3Text: "Participate in the empowerment of children and vulnerable young mothers.",
+                    mission4Title: "Health",
+                    mission4Text: "Provide primary health care for disadvantaged local populations.",
+                    interventionTitle: "Intervention areas",
+                    intervention1: "Rights protection",
+                    intervention1Text: "Protection and promotion of children's and women's rights.",
+                    intervention2: "Education",
+                    intervention2Text: "Formal and non-formal education.",
+                    intervention3: "Entrepreneurship",
+                    intervention3Text: "Entrepreneurship and economic strengthening.",
+                    intervention4: "Food security",
+                    intervention4Text: "Fight against food insecurity.",
+                    intervention5: "Health",
+                    intervention5Text: "Health and WASH programs (water, sanitation, hygiene).",
+                    intervention6: "Emergencies",
+                    intervention6Text: "Emergency response.",
+                    partnersTitle: "Our partners",
+                    galleryTitle: "Gallery",
+                    contactTitle: "Contact us",
+                    contactAddress: "Lubumbashi – DRC",
+                    contactPhone: " +243 997 637 344",
+                    contactEmail: "jeanwamba4@gmail.com",
+                    contactName: "Full name",
+                    contactEmailField: "Email address",
+                    contactSubject: "Subject",
+                    contactMessage: "Message",
+                    contactBtn: "Send message",
+                    footerAbout: "Development NGO dedicated to the protection and promotion of children's and women's rights in DRC.",
+                    footerQuickLinks: "Quick links",
+                    footerFollow: "Follow us",
+                    copyright: "© 2023 Brigade des Filles du Congo. All rights reserved."
+                }
+            };
+
+            // Function to change language
+            function changeLanguage(lang) {
+                document.querySelector('.header-top .container').textContent = content[lang].headerTop;
+                document.querySelector('.logo h1').textContent = content[lang].logoTitle;
+                document.querySelectorAll('nav ul li a')[0].textContent = content[lang].navAbout;
+                document.querySelectorAll('nav ul li a')[1].textContent = content[lang].navMissions;
+                document.querySelectorAll('nav ul li a')[2].textContent = content[lang].navIntervention;
+                document.querySelectorAll('nav ul li a')[3].textContent = content[lang].navPartners;
+                document.querySelectorAll('nav ul li a')[4].textContent = content[lang].navGallery;
+                document.querySelectorAll('nav ul li a')[5].textContent = content[lang].navContact;
+                document.querySelector('.hero h2').textContent = content[lang].heroTitle;
+                document.querySelector('.hero p').textContent = content[lang].heroText;
+                document.querySelector('.hero .btn').textContent = content[lang].heroBtn;
+                document.querySelector('#about .section-title').textContent = content[lang].aboutTitle;
+                document.querySelectorAll('#about .about-text p')[0].textContent = content[lang].aboutText1;
+                document.querySelectorAll('#about .about-text p')[1].textContent = content[lang].aboutText2;
+                document.querySelectorAll('.stat-label')[0].textContent = content[lang].stat1;
+                document.querySelectorAll('.stat-label')[1].textContent = content[lang].stat2;
+                document.querySelectorAll('.stat-label')[2].textContent = content[lang].stat3;
+                document.querySelectorAll('.stat-label')[3].textContent = content[lang].stat4;
+                document.querySelector('#missions .section-title').textContent = content[lang].missionsTitle;
+                document.querySelectorAll('.mission-card h3')[0].textContent = content[lang].mission1Title;
+                document.querySelectorAll('.mission-card p')[0].textContent = content[lang].mission1Text;
+                document.querySelectorAll('.mission-card h3')[1].textContent = content[lang].mission2Title;
+                document.querySelectorAll('.mission-card p')[1].textContent = content[lang].mission2Text;
+                document.querySelectorAll('.mission-card h3')[2].textContent = content[lang].mission3Title;
+                document.querySelectorAll('.mission-card p')[2].textContent = content[lang].mission3Text;
+                document.querySelectorAll('.mission-card h3')[3].textContent = content[lang].mission4Title;
+                document.querySelectorAll('.mission-card p')[3].textContent = content[lang].mission4Text;
+                document.querySelector('#intervention .section-title').textContent = content[lang].interventionTitle;
+                document.querySelectorAll('.area-card h3')[0].textContent = content[lang].intervention1;
+                document.querySelectorAll('.area-card p')[0].textContent = content[lang].intervention1Text;
+                document.querySelectorAll('.area-card h3')[1].textContent = content[lang].intervention2;
+                document.querySelectorAll('.area-card p')[1].textContent = content[lang].intervention2Text;
+                document.querySelectorAll('.area-card h3')[2].textContent = content[lang].intervention3;
+                document.querySelectorAll('.area-card p')[2].textContent = content[lang].intervention3Text;
+                document.querySelectorAll('.area-card h3')[3].textContent = content[lang].intervention4;
+                document.querySelectorAll('.area-card p')[3].textContent = content[lang].intervention4Text;
+                document.querySelectorAll('.area-card h3')[4].textContent = content[lang].intervention5;
+                document.querySelectorAll('.area-card p')[4].textContent = content[lang].intervention5Text;
+                document.querySelectorAll('.area-card h3')[5].textContent = content[lang].intervention6;
+                document.querySelectorAll('.area-card p')[5].textContent = content[lang].intervention6Text;
+                document.querySelector('#partners .section-title').textContent = content[lang].partnersTitle;
+                document.querySelector('#gallery .section-title').textContent = content[lang].galleryTitle;
+                document.querySelector('#contact .section-title').textContent = content[lang].contactTitle;
+                document.querySelectorAll('.contact-details p')[0].innerHTML = '<span class="contact-icon">📍</span> ' + content[lang].contactAddress;
+                document.querySelectorAll('.contact-details p')[1].innerHTML = '<span class="contact-icon">📞</span> ' + content[lang].contactPhone;
+                document.querySelectorAll('.contact-details p')[2].innerHTML = '<span class="contact-icon">✉️</span> ' + content[lang].contactEmail;
+                document.querySelector('.map > div').textContent = content[lang].contactMap;
+                document.querySelector('label[for="name"]').textContent = content[lang].contactName;
+                document.querySelector('label[for="email"]').textContent = content[lang].contactEmailField;
+                document.querySelector('label[for="subject"]').textContent = content[lang].contactSubject;
+                document.querySelector('label[for="message"]').textContent = content[lang].contactMessage;
+                document.querySelector('.contact-form .btn').textContent = content[lang].contactBtn;
+                document.querySelectorAll('.footer-column p')[0].textContent = content[lang].footerAbout;
+                document.querySelectorAll('.footer-column h3')[1].textContent = content[lang].footerQuickLinks;
+                document.querySelectorAll('.footer-column h3')[3].textContent = content[lang].footerFollow;
+                document.querySelector('.copyright').textContent = content[lang].copyright;
+                
+                // Update active button
+                if (lang === 'fr') {
+                    langFr.classList.add('active');
+                    langEn.classList.remove('active');
+                } else {
+                    langEn.classList.add('active');
+                    langFr.classList.remove('active');
+                }
+            }
+
+            // Event listeners for language buttons
+            langFr.addEventListener('click', function() {
+                changeLanguage('fr');
+            });
+
+            langEn.addEventListener('click', function() {
+                changeLanguage('en');
+            });
+        });
+    </script>
+</body>
+</html>
